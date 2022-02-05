@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@use './assets/scss/main.scss';
+@use "../node_modules/leaflet/dist/leaflet.css";
+@use '../node_modules/leaflet-control-geocoder/dist/Control.Geocoder.css';
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#map {
+    z-index: 1;
+}
+
+.leaflet-control-geocoder {
+    display: none!important;
+}

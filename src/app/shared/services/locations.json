@@ -1,0 +1,335 @@
+[{
+    "place_id": "321926123087",
+    "osm_id": "240109189",
+    "osm_type": "node",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "52.5170365",
+    "lon": "13.3888599",
+    "boundingbox": [
+      "52.3570365",
+      "52.6770365",
+      "13.2288599",
+      "13.5488599"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Berlin, Berlin, Berlin, 10117, Germany",
+    "display_place": "Berlin",
+    "display_address": "10117, Germany",
+    "address": {
+      "name": "Berlin",
+      "city": "Berlin",
+      "state": "Berlin",
+      "postcode": "10117",
+      "country": "Germany",
+      "country_code": "de"
+    }
+  },
+  {
+    "place_id": "320598474278",
+    "osm_id": "47811",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "52.3727598",
+    "lon": "4.8936041",
+    "boundingbox": [
+      "52.2781742",
+      "52.4310638",
+      "4.7287563",
+      "5.0791622"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Amsterdam, North Holland, Netherlands",
+    "display_place": "Amsterdam",
+    "display_address": "North Holland, Netherlands",
+    "address": {
+      "name": "Amsterdam",
+      "state": "North Holland",
+      "country": "Netherlands",
+      "country_code": "nl"
+    }
+  },
+  {
+    "place_id": "322032502262",
+    "osm_id": "1675898",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "46.0499803",
+    "lon": "14.5068602",
+    "boundingbox": [
+      "45.9740637",
+      "46.1459968",
+      "14.408617",
+      "14.755332"
+    ],
+    "class": "place",
+    "type": "municipality",
+    "display_name": "Ljubljana, Slovenia",
+    "display_place": "Ljubljana",
+    "display_address": "Slovenia",
+    "address": {
+      "name": "Ljubljana",
+      "country": "Slovenia",
+      "country_code": "si"
+    }
+  },
+  {
+    "place_id": "323431449750",
+    "osm_id": "2728438",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "44.8178131",
+    "lon": "20.4568974",
+    "boundingbox": [
+      "44.6880459",
+      "44.9426876",
+      "20.2213764",
+      "20.6233741"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Belgrade, Central Serbia, 11000, Serbia",
+    "display_place": "Belgrade",
+    "display_address": "Central Serbia, 11000, Serbia",
+    "address": {
+      "name": "Belgrade",
+      "state": "Central Serbia",
+      "postcode": "11000",
+      "country": "Serbia",
+      "country_code": "rs"
+    }
+  },
+  {
+    "place_id": "322345089119",
+    "osm_id": "3168167",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "45.813177",
+    "lon": "15.977048",
+    "boundingbox": [
+      "45.7460492",
+      "45.938004",
+      "15.821776",
+      "16.107078"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Zagreb, Croatia",
+    "display_place": "Zagreb",
+    "display_address": "Croatia",
+    "address": {
+      "name": "Zagreb",
+      "country": "Croatia",
+      "country_code": "hr"
+    }
+  },
+  {
+    "place_id": "320688500334",
+    "osm_id": "2021709163",
+    "osm_type": "node",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "43.8519774",
+    "lon": "18.3866868",
+    "boundingbox": [
+      "43.6919774",
+      "44.0119774",
+      "18.2266868",
+      "18.5466868"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Sarajevo, Federation of Bosnia and Herzegovina, 71000, Bosnia and Herzegovina",
+    "display_place": "Sarajevo",
+    "display_address": "Federation of Bosnia and Herzegovina, 71000, Bosnia and Herzegovina",
+    "address": {
+      "name": "Sarajevo",
+      "state": "Federation of Bosnia and Herzegovina",
+      "postcode": "71000",
+      "country": "Bosnia and Herzegovina",
+      "country_code": "ba"
+    }
+  },
+  {
+    "place_id": "322795392605",
+    "osm_id": "7118787",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "42.6638771",
+    "lon": "21.1640849",
+    "boundingbox": [
+      "42.6290946",
+      "42.696965",
+      "21.1066198",
+      "21.2136267"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Pristina, Kosovo",
+    "display_place": "Pristina",
+    "display_address": "Kosovo",
+    "address": {
+      "name": "Pristina",
+      "country": "Kosovo",
+      "country_code": "xk"
+    }
+  },
+  {
+    "place_id": "324244852450",
+    "osm_id": "41485",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "41.8933203",
+    "lon": "12.4829321",
+    "boundingbox": [
+      "41.6556417",
+      "42.1410285",
+      "12.2344669",
+      "12.8557603"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Rome, Lazio, Italy",
+    "display_place": "Rome",
+    "display_address": "Lazio, Italy",
+    "address": {
+      "name": "Rome",
+      "state": "Lazio",
+      "country": "Italy",
+      "country_code": "it"
+    }
+  },
+
+
+  {
+    "place_id": "322902257932",
+    "osm_id": "5326784",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "40.4167047",
+    "lon": "-3.7035825",
+    "boundingbox": [
+      "40.3119774",
+      "40.6437293",
+      "-3.8889539",
+      "-3.5179163"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Madrid, Community of Madrid, 28001, Spain",
+    "display_place": "Madrid",
+    "display_address": "Community of Madrid, 28001, Spain",
+    "address": {
+      "name": "Madrid",
+      "state": "Community of Madrid",
+      "postcode": "28001",
+      "country": "Spain",
+      "country_code": "es"
+    }
+  },
+
+  {
+    "place_id": "321847934679",
+    "osm_id": "7444",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "48.8566969",
+    "lon": "2.3514616",
+    "boundingbox": [
+      "48.8155755",
+      "48.902156",
+      "2.224122",
+      "2.4697602"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Paris, Ile-de-France, 75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116, France",
+    "display_place": "Paris",
+    "display_address": "Ile-de-France, 75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116, France",
+    "address": {
+      "name": "Paris",
+      "state": "Ile-de-France",
+      "postcode": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116",
+      "country": "France",
+      "country_code": "fr"
+    }
+  },
+  {
+    "place_id": "322843936739",
+    "osm_id": "1882099475",
+    "osm_type": "node",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "41.0096334",
+    "lon": "28.9651646",
+    "boundingbox": [
+      "40.8496334",
+      "41.1696334",
+      "28.8051646",
+      "29.1251646"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Istanbul, Fatih, Istanbul, 34126, Turkey",
+    "display_place": "Istanbul",
+    "display_address": "Fatih, 34126, Turkey",
+    "address": {
+      "name": "Istanbul",
+      "city": "Fatih",
+      "state": "Istanbul",
+      "postcode": "34126",
+      "country": "Turkey",
+      "country_code": "tr"
+    }
+  },
+  {
+    "place_id": "321002564652",
+    "osm_id": "2555133",
+    "osm_type": "relation",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "55.7504461",
+    "lon": "37.6174943",
+    "boundingbox": [
+      "55.4913076",
+      "55.9577717",
+      "37.290502",
+      "37.9674277"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Moscow, Moscow, Russia",
+    "display_place": "Moscow",
+    "display_address": "Russia",
+    "address": {
+      "name": "Moscow",
+      "state": "Moscow",
+      "country": "Russia",
+      "country_code": "ru"
+    }
+  },
+  {
+    "place_id": "320151450988",
+    "osm_id": "25929985",
+    "osm_type": "node",
+    "licence": "https://locationiq.com/attribution",
+    "lat": "59.3251172",
+    "lon": "18.0710935",
+    "boundingbox": [
+      "59.1651172",
+      "59.4851172",
+      "17.9110935",
+      "18.2310935"
+    ],
+    "class": "place",
+    "type": "city",
+    "display_name": "Stockholm, Stockholm County, 111 29, Sweden",
+    "display_place": "Stockholm",
+    "display_address": "Stockholm County, 111 29, Sweden",
+    "address": {
+      "name": "Stockholm",
+      "state": "Stockholm County",
+      "postcode": "111 29",
+      "country": "Sweden",
+      "country_code": "se"
+    }
+  }
+]
