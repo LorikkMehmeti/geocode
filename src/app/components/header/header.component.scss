@@ -30,6 +30,7 @@
         height: 100vh;
     }
     @supports (-webkit-touch-callout: none) {
+        min-height: 100vh;
         min-height: -webkit-fill-available;
     }
     // position: absolute;
