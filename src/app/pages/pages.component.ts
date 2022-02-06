@@ -39,7 +39,6 @@ export class PagesComponent implements OnInit, AfterViewInit {
   getPlace() {
       this._locationService.location$.subscribe((res: any) => {
         const result = res;
-        console.log(result);
         this.map.flyTo([+result.lat, +result.lon], this.getSize(result.type));
       
         const marker = L.marker([+result.lat, +result.lon]);

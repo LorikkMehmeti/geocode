@@ -105,6 +105,12 @@
     user-select: none;
     padding: 12px;
     border-radius: 10px;
+    @media (hover) {
+        &:hover {
+            background: rgba(0,0,0, .06);
+            ._itemactions { opacity: 1; visibility: visible;}
+        }
+    }
 }
 ._itemcontainer {
     -webkit-font-smoothing: antialiased;

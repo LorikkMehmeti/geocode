@@ -31,6 +31,10 @@
   margin-left: auto;
   display: flex;
   flex: none;
+  @media (hover) {
+      opacity: 0;
+      visibility: hidden;
+  }
 }
 
 ._itembutton {

@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
   constructor(private _locationService: LocationService, private _dialog: DialogService) { }
 
   ngOnInit(): void {
-    this.getLocations();
     this.terms$.pipe(
       debounceTime(this.debounce_time),
       distinctUntilChanged(), 
@@ -62,6 +61,9 @@ export class HeaderComponent implements OnInit {
 
   openDialog(location: ILocation) {
     const dialogRef = this._dialog.open(DetailsComponent, {data: { location }});
+    dialogRef.afterClosed$.subscribe(result => {
+      this.selectLocation(result);
+    });
   }
 
 }
