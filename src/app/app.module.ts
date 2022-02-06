@@ -7,18 +7,22 @@ import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { DialogModule } from '@ngneat/dialog';
+import { DetailsComponent } from './components/modals/details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
-    HeaderComponent
+    HeaderComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    DialogModule.forRoot({closeButton: false})
   ],
   providers: [],
   bootstrap: [AppComponent]

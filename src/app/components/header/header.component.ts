@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from '@ngneat/dialog';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 import { ILocation } from 'src/app/shared/models/location.model';
 import { LocationService } from 'src/app/shared/services/location.service';
+import { DetailsComponent } from '../modals/details/details.component';
 
 @Component({
   selector: 'app-header',
@@ -19,9 +21,10 @@ export class HeaderComponent implements OnInit {
   loading: boolean = false;
   saved_locations: any;
 
-  constructor(private _locationService: LocationService) { }
+  constructor(private _locationService: LocationService, private _dialog: DialogService) { }
 
   ngOnInit(): void {
+    this.getLocations();
     this.terms$.pipe(
       debounceTime(this.debounce_time),
       distinctUntilChanged(), 
@@ -36,7 +39,7 @@ export class HeaderComponent implements OnInit {
     this.saved_locations = JSON.parse(data);
   }
 
-  getLocations(term: string = '') {
+  getLocations(term: string = 'Prishtina') {
     this._locationService.getLocations(term)
     .subscribe((res: ILocation[]) => {
       this.results = res;
@@ -55,6 +58,10 @@ export class HeaderComponent implements OnInit {
 
   selectLocation(item: any) {
     this._locationService.location$.next(item);
+  }
+
+  openDialog(location: ILocation) {
+    const dialogRef = this._dialog.open(DetailsComponent, {data: { location }});
   }
 
 }

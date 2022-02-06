@@ -14,7 +14,7 @@
           </defs>
           <use clip-path="url(#b)" fill="transparent" stroke="currentColor" stroke-width="3" xlink:href="#a"></use>
         </svg>
-        <input class="_input-header" #input (input)="keyUpInput(input.value)" placeholder="Search city, country, village">
+        <input class="_input-header" value="Prishtina" #input (input)="keyUpInput(input.value)" placeholder="Search city, country, village">
       </div>
     </div>
   </div>
@@ -26,6 +26,7 @@
 
     <ng-container *ngIf="results?.length && !loading">
 
+      <div class="_sectiontitle">Results</div>
       <a *ngFor="let item of results" class="_itemWrapper">
         <div class="_itemcontainer">
           <div class="_iteminfo">
@@ -36,7 +37,7 @@
             <button class="_itembutton" (click)="selectLocation(item)">
               <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z" fill="currentColor"></path><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path></svg>
             </button>
-            <button class="_itembutton">
+            <button class="_itembutton" (click)="openDialog(item)">
               <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 1v3h3v2h-3v3h-2V6h-3V4h3V1h2zm-8 12c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2zm1-9.94v2.02A6.53 6.53 0 0 0 12 5c-3.35 0-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14c4.05-3.7 6-6.79 6-9.14V11h2v.2c0 3.32-2.67 7.25-8 11.8c-5.33-4.55-8-8.48-8-11.8C4 6.22 7.8 3 12 3c.34 0 .67.02 1 .06z" fill="currentColor"></path></svg>
             </button>
           </div>
@@ -74,10 +75,10 @@
     </ng-container>
   
   </div>
-  <div style="min-height: 200px; flex: none; max-height: 200px; display: flex; flex-direction: column;">
+  <div class="_savedlocationswrapper">
     <p class="_sectiontitle">Saved locations</p>
-    <div class="_custom-scrollbar" style=" overflow: auto; flex: 1;">
-      <a *ngFor="let item of saved_locations" class="_itemWrapper">
+    <div class="_custom-scrollbar slcontainer">
+      <a *ngFor="let item of saved_locations; let i = index;" class="_itemWrapper" [attr.data-item]="item.address.name">
         <div class="_itemcontainer">
           <div class="_iteminfo">
             <p class="_itemtitle">{{item.address.name}}</p>
@@ -86,9 +87,6 @@
           <div class="_itemactions">
             <button class="_itembutton" (click)="selectLocation(item)">
               <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z" fill="currentColor"></path><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path></svg>
-            </button>
-            <button class="_itembutton">
-              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 1v3h3v2h-3v3h-2V6h-3V4h3V1h2zm-8 12c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2zm1-9.94v2.02A6.53 6.53 0 0 0 12 5c-3.35 0-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14c4.05-3.7 6-6.79 6-9.14V11h2v.2c0 3.32-2.67 7.25-8 11.8c-5.33-4.55-8-8.48-8-11.8C4 6.22 7.8 3 12 3c.34 0 .67.02 1 .06z" fill="currentColor"></path></svg>
             </button>
           </div>
         </div>
