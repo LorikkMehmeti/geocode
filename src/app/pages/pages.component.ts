@@ -1,9 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from "leaflet";
-import "leaflet-control-geocoder/dist/Control.Geocoder.js"; 
-import { HttpClient } from "@angular/common/http";
+import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import { LocationService } from '../shared/services/location.service';
-import { ILocation } from '../shared/models/location.model';
 
 const iconUrl = "https://www.freeiconspng.com/thumbs/pin-png/pin-png-28.png";
 const iconDefault = L.icon({
@@ -70,15 +68,12 @@ export class PagesComponent implements OnInit, AfterViewInit {
       minZoom: 6,
       zoomControl: false
     });
+    
     this.map.invalidateSize(false);
     const lat = 42.5812894;
     const lon = 21.5811607;
 
     this.map.setView([lat, lon], 12);
-    const marker = L.marker([lat, +lon]);
-
-    // marker.addTo(this.map);
-    // marker.remove();
 
     this.getPlace();
 

@@ -31,7 +31,17 @@
 
   <div class="_resultswrapper">
     <div *ngIf="loading">
-      Loading...
+      <p class="_skeleton" style="--width: 50%;"></p>
+      <div class="_itemcontainer _skeletoncontainer" *ngFor="let skeleton of [].constructor(10)">
+        <div class="_iteminfo">
+          <p class="_skeleton" style="--width: 50%;"></p>
+          <p class="_skeleton" style="--width: 30%;"></p>
+        </div>
+        <div class="_itemactions">
+          <p class="_skeleton _btn"></p>
+          <p class="_skeleton _btn"></p>
+        </div>
+      </div>
     </div>
 
     <ng-container *ngIf="results?.length && !loading">

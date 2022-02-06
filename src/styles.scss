@@ -20,3 +20,23 @@
 .ngneat-dialog-content {
     min-height: auto!important;
 }
+
+._skeletoncontainer {
+    padding: 0 1rem;
+    ._itemactions { opacity: 1!important; visibility: visible!important; }
+}
+
+._skeleton {
+    margin: .4rem;
+    --width: 80%;
+    width: 300px;
+    max-width: var(--width);
+    height: 1.3rem;
+    background: linear-gradient(to right, rgba(0,0,0,.05) 8%, rgba(0,0,0, .08) 18%, rgba(0,0,0,.05) 33%);
+
+    &._btn {
+        margin: 0 .4rem;
+        width: 2rem;
+        height: 2rem;
+    }
+}
