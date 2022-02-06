@@ -14,7 +14,7 @@ export class LocationService {
   location$ = new Subject();
   locations$ = new Subject<ILocation[]>();
 
-  private endpoint: string = `https://api.locationiq.com/v1/autocomplete.php?key=pk.98b2226e4fb14151b4655910b9869c61`;
+  private endpoint: string = `https://api.locationiq.com/v1/autocomplete.php?key=pk.c445505378612728135829cfedddd86b`;
 
   constructor(private _http: HttpClient) { }
 
