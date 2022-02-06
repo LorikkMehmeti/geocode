@@ -19,7 +19,3 @@ Install the `npm` packages described in the `package.json` and verify that it wo
 npm install
 npm start
 ```
-
-Shut it down manually with `Ctrl-C`.
-
-#### npm scripts
