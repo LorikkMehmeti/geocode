@@ -56,6 +56,7 @@ export class HeaderComponent implements OnInit {
   }
 
   selectLocation(item: any) {
+    this.toggleMenu();
     this._locationService.location$.next(item);
   }
 

@@ -20,6 +20,7 @@ export class DetailsComponent implements OnInit {
   }
 
   viewDetails() {
+    document.querySelector('.header')?.classList.remove('show');
     this._dialogRef.close(this.data);
   }
 

@@ -25,6 +25,7 @@ L.Marker.prototype.options.icon = iconDefault;
 export class PagesComponent implements OnInit, AfterViewInit {
   
   private map: any;
+  marker: any;
   
   constructor(private _locationService: LocationService) { }
 
@@ -40,29 +41,16 @@ export class PagesComponent implements OnInit, AfterViewInit {
       this._locationService.location$.subscribe((res: any) => {
         const result = res;
         this.map.flyTo([+result.lat, +result.lon], this.getSize(result.type));
-      
-        const marker = L.marker([+result.lat, +result.lon]);
-        marker.addTo(this.map);
-      
-        if(['town', 'city'].includes(result.type)) {
-        } else {
-          // marker.remove();          
+        
+        if(this.marker) {
+          this.map.removeLayer(this.marker);
         }
+
+        this.map.invalidateSize(false);
+
+        this.marker = L.marker([+result.lat, +result.lon]);
+        this.marker.addTo(this.map);
       });
-    // this._locationService.getLocations('Kamenice')
-    // .subscribe((res: ILocation[]) => {
-    //   this._locationService.locations$.next(res);
-    //   const result = res[9];
-    //   this.map.flyTo([+result.lat, +result.lon], this.getSize(result.type));
-    
-    //   const marker = L.marker([+result.lat, +result.lon]);
-    
-    //   if(['town', 'city'].includes(result.type)) {
-    //     marker.addTo(this.map);
-    //   } else {
-    //     marker.remove();          
-    //   }
-    // });
   }
 
   getSize(type: string): string {
@@ -82,6 +70,7 @@ export class PagesComponent implements OnInit, AfterViewInit {
       minZoom: 6,
       zoomControl: false
     });
+    this.map.invalidateSize(false);
     const lat = 42.5812894;
     const lon = 21.5811607;
 

@@ -44,7 +44,7 @@
             <p class="_itemsubinfo">{{item.address.country}}</p>
           </div>
           <div class="_itemactions">
-            <button class="_itembutton" (click)="selectLocation(item)">
+            <button class="_itembutton" (click)="selectLocation(item)" title="Navigate">
               <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
                 <path
                   d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z"
@@ -53,7 +53,7 @@
                   stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
               </svg>
             </button>
-            <button class="_itembutton" (click)="openDialog(item)">
+            <button class="_itembutton" (click)="openDialog(item)" title="View details">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                 role="img" class="iconify iconify--ci" width="32" height="32" preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24">
