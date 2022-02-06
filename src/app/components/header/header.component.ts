@@ -6,7 +6,7 @@ import { LocationService } from 'src/app/shared/services/location.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss', './2-header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
