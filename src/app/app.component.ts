@@ -15,4 +15,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this._locationService.setDefaultLocations();
   }
+
+  toggleMenu() {
+    document.querySelector('.header')?.classList.toggle('show');
+  }
 }

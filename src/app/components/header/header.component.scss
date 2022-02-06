@@ -2,18 +2,13 @@
 
 .header {
     -webkit-tap-highlight-color: transparent;
-    color: var(--color-text, #333333);
-    font-feature-settings: "liga" on,"calt" on;
+    color: #333333;
     margin: 0;
     padding: 0;
     border: 0;
-    font: inherit;
-    vertical-align: inherit;
     outline: none;
-    letter-spacing: inherit;
     text-decoration: none;
-    background-color: var(--color-bg, #fff);
-    top: calc(var(--toolbar-height) + var(--editor-banner-height));
+    background-color: #fff;
     left: 0;
     bottom: 0;
     user-select: none;
@@ -28,6 +23,7 @@
     // bottom: 20px;
     height: 100vh;
     // position: absolute;
+    transition: transform 150ms ease;
 
 }
 
@@ -62,7 +58,7 @@
     flex-direction: row;
     -webkit-box-align: center;
     align-items: center;
-    color: var(--framer-fresco-dashboardSearchPlaceholder-color,#999999);
+    color: #999999;
     transition: all .15s linear;
     width: 100%;
 

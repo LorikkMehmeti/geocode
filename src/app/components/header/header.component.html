@@ -1,5 +1,14 @@
 <div class="header">
   <div>
+    <button type="button" class="_togglemenu" (click)="toggleMenu()">
+      <svg width="100%" height="100%" version="1.1"
+        viewBox="0 0 20 20" x="0px" y="0px" class="ScIconSVG-sc-1bgeryd-1 eOJUoR">
+        <g>
+          <path d="M16 16V4h2v12h-2zM6 9l2.501-2.5-1.5-1.5-5 5 5 5 1.5-1.5-2.5-2.5h8V9H6z"></path>
+        </g>
+      </svg> Toggle menu</button>
+  </div>
+  <div>
     <div class="_inputwrapper">
       <div class="_searchwrapper">
         <svg viewBox="0 0 16 16" height="16" width="16">
@@ -14,12 +23,13 @@
           </defs>
           <use clip-path="url(#b)" fill="transparent" stroke="currentColor" stroke-width="3" xlink:href="#a"></use>
         </svg>
-        <input class="_input-header" #input (input)="keyUpInput(input.value)" placeholder="Search city, country, village">
+        <input class="_input-header" #input (input)="keyUpInput(input.value)"
+          placeholder="Search city, country, village">
       </div>
     </div>
   </div>
 
-  <div class="_resultswrapper" >
+  <div class="_resultswrapper">
     <div *ngIf="loading">
       Loading...
     </div>
@@ -35,22 +45,43 @@
           </div>
           <div class="_itemactions">
             <button class="_itembutton" (click)="selectLocation(item)">
-              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z" fill="currentColor"></path><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path></svg>
+              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+                <path
+                  d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z"
+                  fill="currentColor"></path>
+                <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
+              </svg>
             </button>
             <button class="_itembutton" (click)="openDialog(item)">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ci" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M17.001 20h-11a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v2h-4v11h11v-4h2v4a2 2 0 0 1-2 2zm-5.3-6.293l-1.41-1.414L16.584 6h-3.583V4h7v7h-2V7.415l-6.3 6.292z" fill="currentColor"></path></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                role="img" class="iconify iconify--ci" width="32" height="32" preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24">
+                <g fill="none">
+                  <path
+                    d="M17.001 20h-11a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v2h-4v11h11v-4h2v4a2 2 0 0 1-2 2zm-5.3-6.293l-1.41-1.414L16.584 6h-3.583V4h7v7h-2V7.415l-6.3 6.292z"
+                    fill="currentColor"></path>
+                </g>
+              </svg>
             </button>
           </div>
         </div>
       </a>
 
     </ng-container>
-    
+
     <ng-container *ngIf="results.length == 0 && !loading && input.value">
       <div class="_emptystate">
         <div class="_emptystatewrapper">
           <div class="_emptystateicon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="3"><circle cx="28" cy="28" r="16.5"></circle><path d="M41.65 37.272l9.471 9.607A2.99 2.99 0 0152 49a2.99 2.99 0 01-.879 2.121 2.99 2.99 0 01-1.967.875 2.995 2.995 0 01-2.121-.73h0l-9.602-9.725a16.601 16.601 0 004.22-4.269h0z" fill-opacity="0.15" fill="currentColor" fill-rule="nonzero" stroke-linejoin="round"></path></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+              <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="3">
+                <circle cx="28" cy="28" r="16.5"></circle>
+                <path
+                  d="M41.65 37.272l9.471 9.607A2.99 2.99 0 0152 49a2.99 2.99 0 01-.879 2.121 2.99 2.99 0 01-1.967.875 2.995 2.995 0 01-2.121-.73h0l-9.602-9.725a16.601 16.601 0 004.22-4.269h0z"
+                  fill-opacity="0.15" fill="currentColor" fill-rule="nonzero" stroke-linejoin="round"></path>
+              </g>
+            </svg>
           </div>
           <div class="_emptystatetext">
             <div class="_emptystatetitle">No search results</div>
@@ -64,7 +95,14 @@
       <div class="_emptystate">
         <div class="_emptystatewrapper">
           <div class="_emptystateicon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="3"><circle cx="28" cy="28" r="16.5"></circle><path d="M41.65 37.272l9.471 9.607A2.99 2.99 0 0152 49a2.99 2.99 0 01-.879 2.121 2.99 2.99 0 01-1.967.875 2.995 2.995 0 01-2.121-.73h0l-9.602-9.725a16.601 16.601 0 004.22-4.269h0z" fill-opacity="0.15" fill="currentColor" fill-rule="nonzero" stroke-linejoin="round"></path></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+              <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="3">
+                <circle cx="28" cy="28" r="16.5"></circle>
+                <path
+                  d="M41.65 37.272l9.471 9.607A2.99 2.99 0 0152 49a2.99 2.99 0 01-.879 2.121 2.99 2.99 0 01-1.967.875 2.995 2.995 0 01-2.121-.73h0l-9.602-9.725a16.601 16.601 0 004.22-4.269h0z"
+                  fill-opacity="0.15" fill="currentColor" fill-rule="nonzero" stroke-linejoin="round"></path>
+              </g>
+            </svg>
           </div>
           <div class="_emptystatetext">
             <div class="_emptystatetitle">Type something</div>
@@ -73,7 +111,7 @@
         </div>
       </div>
     </ng-container>
-  
+
   </div>
   <div class="_savedlocationswrapper">
     <p class="_sectiontitle">Saved locations</p>
@@ -86,10 +124,24 @@
           </div>
           <div class="_itemactions">
             <button class="_itembutton" (click)="selectLocation(item)">
-              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z" fill="currentColor"></path><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path></svg>
+              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+                <path
+                  d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z"
+                  fill="currentColor"></path>
+                <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
+              </svg>
             </button>
             <button class="_itembutton" (click)="openDialog(item)">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ci" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M17.001 20h-11a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v2h-4v11h11v-4h2v4a2 2 0 0 1-2 2zm-5.3-6.293l-1.41-1.414L16.584 6h-3.583V4h7v7h-2V7.415l-6.3 6.292z" fill="currentColor"></path></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                role="img" class="iconify iconify--ci" width="32" height="32" preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24">
+                <g fill="none">
+                  <path
+                    d="M17.001 20h-11a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v2h-4v11h11v-4h2v4a2 2 0 0 1-2 2zm-5.3-6.293l-1.41-1.414L16.584 6h-3.583V4h7v7h-2V7.415l-6.3 6.292z"
+                    fill="currentColor"></path>
+                </g>
+              </svg>
             </button>
           </div>
         </div>

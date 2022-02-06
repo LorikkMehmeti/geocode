@@ -66,5 +66,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  toggleMenu() {
+    document.querySelector('.header')?.classList.remove('show')
+  }
 }
 

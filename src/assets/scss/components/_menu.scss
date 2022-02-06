@@ -1,0 +1,53 @@
+.header {
+    @media only screen and (max-width: 800px) {
+        position: absolute;
+        transform: translateX(-400px);
+    }
+
+    &.show {
+        transform: translateX(0);
+    }
+}
+
+._togglemenu {
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    background: none;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    min-width: 3rem;
+    border-radius: .4rem;
+    background-color: #0000000d;
+    color: #000;
+    font-weight: 500;
+    margin: 10px;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    svg {
+        width: 1.8rem;
+        height: 1.8rem;
+        margin-right: .5rem;
+    }
+    @media only screen and (max-width: 800px) {
+        display: inline-flex;
+    }
+}
+
+._menubutton {
+    display: none;
+    @media only screen and (max-width: 800px) {
+        position: fixed;
+        top: 10px;
+        left: 20px;
+        z-index: 1;
+        min-width: 40px;
+        display: inline-flex;
+        background: #f7f7f7;
+    }
+}
