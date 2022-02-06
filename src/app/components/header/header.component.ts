@@ -17,23 +17,26 @@ export class HeaderComponent implements OnInit {
   debounce_time: number = 800;
 
   loading: boolean = false;
+  saved_locations: any;
 
   constructor(private _locationService: LocationService) { }
 
   ngOnInit(): void {
-    this.getLocations();
-    
     this.terms$.pipe(
       debounceTime(this.debounce_time),
       distinctUntilChanged(), 
     ).subscribe((term) => {
       this.getLocations(<string>term);
     });
-    
+    this.getSavedLocations();
   }
 
-  getLocations(term: string = 'Kamenice') {
-    this.loading = true;
+  getSavedLocations() {
+    const data: any = this._locationService.getStorageLocations();
+    this.saved_locations = JSON.parse(data);
+  }
+
+  getLocations(term: string = '') {
     this._locationService.getLocations(term)
     .subscribe((res: ILocation[]) => {
       this.results = res;
@@ -43,6 +46,11 @@ export class HeaderComponent implements OnInit {
       this.results = [];
       this.loading = false;
     });
+  }
+
+  keyUpInput(value: string): void {
+    this.loading = true;
+    this.terms$.next(value);
   }
 
   selectLocation(item: any) {

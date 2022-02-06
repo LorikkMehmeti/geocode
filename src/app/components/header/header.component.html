@@ -14,41 +14,85 @@
           </defs>
           <use clip-path="url(#b)" fill="transparent" stroke="currentColor" stroke-width="3" xlink:href="#a"></use>
         </svg>
-        <input class="_input-header" #input (input)="terms$.next(input.value)" placeholder="Search 6 projects…">
+        <input class="_input-header" #input (input)="keyUpInput(input.value)" placeholder="Search city, country, village">
       </div>
     </div>
-    <!-- <div class="">
-            <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
-            <input type="text"  name="first-name" id="first-name" autocomplete="given-name" 
-            class="p-1 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-          </div> -->
   </div>
-  <div class="_resultswrapper" style="flex: 1; overflow: auto;">
-    <a *ngFor="let item of results" class="_itemWrapper">
-      <div class="_itemcontainer">
-        <div class="_iteminfo">
-          <p class="_itemtitle">{{item.address.name}}</p>
-          <p class="_itemsubinfo">{{item.address.country}}</p>
+
+  <div class="_resultswrapper" >
+    <div *ngIf="loading">
+      Loading...
+    </div>
+
+    <ng-container *ngIf="results?.length && !loading">
+
+      <a *ngFor="let item of results" class="_itemWrapper">
+        <div class="_itemcontainer">
+          <div class="_iteminfo">
+            <p class="_itemtitle">{{item.address.name}}</p>
+            <p class="_itemsubinfo">{{item.address.country}}</p>
+          </div>
+          <div class="_itemactions">
+            <button class="_itembutton" (click)="selectLocation(item)">
+              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z" fill="currentColor"></path><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path></svg>
+            </button>
+            <button class="_itembutton">
+              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 1v3h3v2h-3v3h-2V6h-3V4h3V1h2zm-8 12c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2zm1-9.94v2.02A6.53 6.53 0 0 0 12 5c-3.35 0-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14c4.05-3.7 6-6.79 6-9.14V11h2v.2c0 3.32-2.67 7.25-8 11.8c-5.33-4.55-8-8.48-8-11.8C4 6.22 7.8 3 12 3c.34 0 .67.02 1 .06z" fill="currentColor"></path></svg>
+            </button>
+          </div>
+        </div>
+      </a>
+
+    </ng-container>
+    
+    <ng-container *ngIf="results.length == 0 && !loading && input.value">
+      <div class="_emptystate">
+        <div class="_emptystatewrapper">
+          <div class="_emptystateicon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="3"><circle cx="28" cy="28" r="16.5"></circle><path d="M41.65 37.272l9.471 9.607A2.99 2.99 0 0152 49a2.99 2.99 0 01-.879 2.121 2.99 2.99 0 01-1.967.875 2.995 2.995 0 01-2.121-.73h0l-9.602-9.725a16.601 16.601 0 004.22-4.269h0z" fill-opacity="0.15" fill="currentColor" fill-rule="nonzero" stroke-linejoin="round"></path></g></svg>
+          </div>
+          <div class="_emptystatetext">
+            <div class="_emptystatetitle">No search results</div>
+            <div class="_emptystateinfo">No place matched your search.</div>
+          </div>
         </div>
       </div>
-    </a>
-    <!-- <div class="w-full">
-      <div class="flex cursor-pointer py-2 my-1 hover:bg-blue-lightest rounded" *ngFor="let item of results"
-        (click)="selectLocation(item)">
-        <div class="w-8 h-10 text-center py-1">
-          <p class="text-3xl p-0 text-green-dark">&bull;</p>
-        </div>
-        <div class="w-4/5 h-10 py-3 px-1 text-overflow">
-          <p class="w-4/5 hover:text-blue-dark truncate">{{item.address.name}}</p>
-        </div>
-        <div class="w-1/5 h-10 text-right p-3">
-          <p class="text-sm text-grey-dark">{{item.type | titlecase}}</p>
+    </ng-container>
+
+    <ng-container *ngIf="results.length == 0 && !loading && input.value == ''">
+      <div class="_emptystate">
+        <div class="_emptystatewrapper">
+          <div class="_emptystateicon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="3"><circle cx="28" cy="28" r="16.5"></circle><path d="M41.65 37.272l9.471 9.607A2.99 2.99 0 0152 49a2.99 2.99 0 01-.879 2.121 2.99 2.99 0 01-1.967.875 2.995 2.995 0 01-2.121-.73h0l-9.602-9.725a16.601 16.601 0 004.22-4.269h0z" fill-opacity="0.15" fill="currentColor" fill-rule="nonzero" stroke-linejoin="round"></path></g></svg>
+          </div>
+          <div class="_emptystatetext">
+            <div class="_emptystatetitle">Type something</div>
+            <div class="_emptystateinfo">Start by typing something</div>
+          </div>
         </div>
       </div>
-    </div> -->
-    <!-- <p >
-            {{item.display_place}}
-        </p> -->
+    </ng-container>
+  
   </div>
-  <div>.......</div>
+  <div style="min-height: 180px; flex: none; max-height: 180px; display: flex; flex-direction: column;">
+    <p class="_sectiontitle">Saved locations</p>
+    <div class="_custom-scrollbar" style=" overflow: auto; flex: 1;">
+      <a *ngFor="let item of saved_locations" class="_itemWrapper">
+        <div class="_itemcontainer">
+          <div class="_iteminfo">
+            <p class="_itemtitle">{{item.address.name}}</p>
+            <p class="_itemsubinfo">{{item.address.country}}</p>
+          </div>
+          <div class="_itemactions">
+            <button class="_itembutton" (click)="selectLocation(item)">
+              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M336.76 161l-186.53 82.35c-10.47 4.8-6.95 20.67 4.57 20.67H244a4 4 0 0 1 4 4v89.18c0 11.52 16 15 20.78 4.56L351 175.24A10.73 10.73 0 0 0 336.76 161z" fill="currentColor"></path><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path></svg>
+            </button>
+            <button class="_itembutton">
+              <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 1v3h3v2h-3v3h-2V6h-3V4h3V1h2zm-8 12c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2zm1-9.94v2.02A6.53 6.53 0 0 0 12 5c-3.35 0-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14c4.05-3.7 6-6.79 6-9.14V11h2v.2c0 3.32-2.67 7.25-8 11.8c-5.33-4.55-8-8.48-8-11.8C4 6.22 7.8 3 12 3c.34 0 .67.02 1 .06z" fill="currentColor"></path></svg>
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>

@@ -43,11 +43,11 @@ export class PagesComponent implements OnInit, AfterViewInit {
         this.map.flyTo([+result.lat, +result.lon], this.getSize(result.type));
       
         const marker = L.marker([+result.lat, +result.lon]);
+        marker.addTo(this.map);
       
         if(['town', 'city'].includes(result.type)) {
-          marker.addTo(this.map);
         } else {
-          marker.remove();          
+          // marker.remove();          
         }
       });
     // this._locationService.getLocations('Kamenice')

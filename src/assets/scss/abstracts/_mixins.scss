@@ -19,3 +19,7 @@
       scrollbar-track-color: $background-color;
     }
   }
+
+._custom-scrollbar {
+  @include scrollbar(.5em, rgba(0,0,0, .1), transparent);
+}
